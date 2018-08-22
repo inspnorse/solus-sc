@@ -13,7 +13,6 @@
 
 import dbus
 
-
 class PolkitHelper:
     """ PolKit helper, reused in a billion projects by now, stolen from our
         own solusconfig from back in the day. """
@@ -35,6 +34,12 @@ class PolkitHelper:
                        'start-time': dbus.UInt64(0, variant_level=1)
                    })
 
+
+        subject = ('windows-process', 
+                    {
+                        'pid': dbus.UInt32(pid, variant_level=1),
+                        'start-time': dbus.UInt64(0, variant_level=1)
+                    })
         # No cancellation.
         cancel_id = ''
 
