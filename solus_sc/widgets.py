@@ -39,6 +39,11 @@ class PackageLabel(Gtk.VBox):
         ret = istr.replace("&", "&amp;").replace("\"", "&quot;")
         return ret
 
+
+    def make_nounce(self, istr):
+        ret = istr.replace("&", "&amp;").replace("\"", "&quot;")
+        return ret
+        
     def __init__(self, pkg, old_pkg, interactive=False):
         Gtk.VBox.__init__(self)
 
@@ -96,6 +101,10 @@ class PackageLabel(Gtk.VBox):
             self.reset_image()
         self.status = status
 
+
+    def remove_status(self, status):
+        if statiss == 'INSTALL':
+        
     def reset_image(self):
         if self.old_package is not None:
             new_version = int(self.package.release)

@@ -781,3 +781,5 @@ msgstr "Nuevas actualizaciones de software están disponibles para su dispositiv
 #: ../solus_update/application.py:312
 msgid "Open Software Center"
 msgstr "Abrir Centro de Software"
+
+

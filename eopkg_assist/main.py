@@ -23,9 +23,11 @@ if __name__ == '__main__':
     if os.geteuid() != 0:
         sys.stderr.write("Need to be root to run eopkg_assist")
         sys.exit(1)
+        
     GObject.threads_init()
     dbus.mainloop.glib.threads_init()
     loop = GObject.MainLoop()
+
     try:
         service = EopkgAssistService(loop)
         loop.run()
@@ -33,4 +35,5 @@ if __name__ == '__main__':
         print e
     finally:
         loop.quit()
+
     sys.exit(0)

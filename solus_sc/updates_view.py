@@ -56,6 +56,9 @@ class ScChangelogViewer(Gtk.Dialog):
         isize = sc_format_size_local(obj.get_update_size(), True)
         builder.get_object("label_upsize").set_text(isize)
 
+        isize = sc_format_size_local(obj.get_update_size(), True)
+        builder.get_object("label_upsize").set_text(isize)
+        
         # Handle the changelog
         oldRelease = int(obj.new_pkg.release) - 1
         if obj.old_pkg:

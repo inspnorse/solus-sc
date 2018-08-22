@@ -7,6 +7,7 @@ if [[ ! -d po ]]; then
     mkdir po
 fi
 
+grep "_(\"" */*.py|cut -d : -f 1 | uniq > list0
 grep "_(\"" */*.py|cut -d : -f 1 | uniq > list1
 grep "_(\'" */*.py|cut -d : -f 1 | uniq > list2
 cat list1 list2 > list3
